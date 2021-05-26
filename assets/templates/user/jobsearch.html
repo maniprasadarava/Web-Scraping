@@ -1,0 +1,57 @@
+{%extends 'userbase.html'%}
+{%load static%}
+{%block contents%}
+
+<div class="wrapper col2">
+  <div id="featured_slide">
+    <div class="featured_box">
+        <h2></h2>
+        <p><h1 class="text-center">Job Search Here..!</h1>
+
+<form action="/jobsearch/" method="POST">{% csrf_token %}
+    <!-- Search form -->
+<div class="active-pink-3 active-pink-4 mb-4 col-xs-4">
+    <input name='title' class="form-control col-xs-4" type="text" placeholder="Enter job Title" aria-label="Search" required>
+  </div>
+  <!-- Search form -->
+  <div class="active-purple-3 active-purple-4 mb-4">
+    <input name ='location' class="form-control" type="text" placeholder="Enter Location" aria-label="Search" required>
+  </div>
+  <button class='btn btn-success' type="submit">Search</button>
+</form>
+
+<h1 class='text-center'>Job Results Here</h1>
+
+<h1> {{message}}</h1>
+
+<hr>
+
+
+    {% for title,comapny,summary,date,link in data %}
+
+
+    <div class="card">
+        <div class="card-header">
+         New
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Job Title: {{title}}</h5>
+                <b class="card-title">Company: {{comapny}}</b>
+                <p class="card-text">job Description: {{summary}}</p>
+                <p class="card-text">Posted:{{date}}</p>
+          <a href="{{link}}" class="btn btn-info">Apply</a>
+        </div>
+      </div>
+      {% endfor %}
+
+        </p>
+      <div class="floater">
+        <h2></h2>
+        <p></p>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+{%endblock%}

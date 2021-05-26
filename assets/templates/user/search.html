@@ -1,0 +1,26 @@
+{%extends 'userbase.html'%}
+{%load static%}
+{%block contents%}
+
+<div class="wrapper col2">
+  <div id="featured_slide">
+    <div class="featured_box">
+        <h2></h2>
+        <p>
+           Welcome USER page...
+            <form action="/searchresult/" method="post">
+        {% csrf_token %}
+        name:<input type="text" name="t1" value="enter name">
+        <input type="submit"  value="submit">
+    </form>
+        </p>
+      <div class="floater">
+        <h2></h2>
+        <p></p>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+{%endblock%}

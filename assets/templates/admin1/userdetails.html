@@ -1,0 +1,50 @@
+{%extends 'adminbase.html'%}
+{%load static%}
+
+
+{%block contents%}
+
+<div class="wrapper col2">
+  <div id="featured_slide">
+    <div class="featured_box">
+        <h2></h2>
+        <table border="2px solid red" align="left">
+                                  <tr><th style="color:green">Id</th>
+                                      <th style="color:green">name</th>
+
+                                    <th style="color:green">email</th>
+                                    <th style="color:green">mobileno</th>
+                                    <th style="color:green">status</th>
+                                    <th style="color:green">activate</th>
+                                  </tr>
+
+                              {% for x in qs %}
+                                  <tr>
+                                    <td style="color:red">{{x.id}}</td>
+                                    <td style="color:red">{{x.name}}</td>
+
+                                    <td style="color:red">{{x.email}}</td>
+                                    <td style="color:red">{{x.mobileno}}</td>
+                                    <td style="color:red">{{x.status}}</td>
+
+                                    {% if x.status == 'waiting' %}
+                                    <td style="color:orange"> <a href="/activateuser/?pid={{ x.id }}" >Activate</a></td>
+                                    {% else %}
+                                            <td style="color:orange"> Activated</td>
+                                            {% endif %}
+
+                                     </tr>
+                                    {% endfor %}
+
+                            </table>
+        </p>
+      <div class="floater">
+        <h2></h2>
+        <p></p>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+{%endblock%}

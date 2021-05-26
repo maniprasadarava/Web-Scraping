@@ -1,0 +1,51 @@
+{%extends 'adminbase.html'%}
+{%load static%}
+
+
+{%block contents%}
+
+<div class="wrapper col2">
+  <div id="featured_slide">
+    <div class="featured_box">
+        <h2></h2>
+        <p>
+           Welcome admin page...
+            <table border="2px solid red" align="left">
+                                  <tr><th style="color:green">Id</th>
+                                      <th style="color:green">name</th>
+
+                                    <th style="color:green">rating</th>
+                                    <th style="color:green">review</th>
+                                    <th style="color:green">type</th>
+                                    <th style="color:green">hq</th>
+                                    <th style="color:green">employees</th>
+                                  </tr>
+
+                              {% for x in qs %}
+                                  <tr>
+                                    <td style="color:red">{{x.id}}</td>
+                                    <td style="color:red">{{x.name}}</td>
+                                      <td style="color:red">{{x.rating}}</td>
+                                    <td style="color:red">{{x.reviews}}</td>
+                                    <td style="color:red">{{x.type}}</td>
+                                    <td style="color:red">{{x.hq}}</td>
+                                    <td style="color:red">{{x.employees}}</td>
+                                     </tr>
+                                    {% endfor %}
+
+                            </table>
+
+
+
+
+        </p>
+      <div class="floater">
+        <h2></h2>
+        <p></p>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+{%endblock%}
