@@ -4,6 +4,9 @@ Web scraping, web harvesting, or web data extraction is data scraping used for e
 Features:
 
 basic understanding of web scraping
+
 how to extract data from a website using classes and HTML tags
+
 how to use requests module to get data
+
 how to use Beautifulsoup
